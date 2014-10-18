@@ -2,16 +2,49 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-int length;
+
 int nek_length;
-int * nekops(int*);
+int longest_nek_length = 0;
+int * nekops(int*, int);
 void print_array(int*);
+int K;
 
 int main() {
-    length = 4;
-    int test[4] = {1, 2, 1, 1 };
+    //scan in calue of k.
+    scanf("%d", &K);
+    //Prepare array of length of each nek_sequence.
+    int nekop_length[K];
 
-    print_array(nekops(test));
+    int i=0;
+
+    //can be any number 0 -> 255.
+    //Just do 255 to be safe.
+    int input[255];
+    int buffer;
+    int a;
+    int input_length=0;
+
+    while(a= scanf("%d ", &buffer)){
+        //Stop when you can't read anymore.
+        if(a != 1) break;
+        input[input_length++] = buffer;
+        //increment length of first nekop.
+    }
+
+
+
+    int output[K][999];
+
+    nekop_length[0] = input_length;
+    output[0][0] = nekops(input,nekop_length[0]);
+
+    for(a=1; a <K; a++){
+        nekop_length[a] = nek_length;
+        output[a][0] = nekops(output[a-1][0], nekop_length[a]);
+    }
+
+
+
 
     return 0;
 }
@@ -25,9 +58,9 @@ void print_array(int * arr){
 
 
 
-int * nekops(int *input){
-    //Pick arbitrarily large length.
-    int nek_sequence[length*999];
+
+int * nekops(int *input, int length){
+    int nek_sequence[999];
     int n_index = 0;
     int i;
     int current_number;
@@ -56,5 +89,6 @@ int * nekops(int *input){
         nek_sequence[i++] = current_number;
     }
     nek_length = i;
+
     return nek_sequence;
 }
