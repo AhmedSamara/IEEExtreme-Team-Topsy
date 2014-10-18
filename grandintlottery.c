@@ -17,8 +17,8 @@ int main() {
                     ,&winner_i,&N);
     int seq_length = max_val - min_val;
     if(winner_i < 1 || winner_i > 1000000 || N > 18
-
-       ){
+       )
+       {
         printf("DOES NOT EXIST\n");
         return 0;
     }
