@@ -15,6 +15,13 @@ int main() {
 
     scanf("%d %d %d %d",&min_val,&max_val
                     ,&winner_i,&N);
+    int seq_length = max_val - min_val;
+    if(winner_i < 1 || winner_i > 1000000 || N > 18
+
+       ){
+        printf("DOES NOT EXIST\n");
+        return 0;
+    }
 
     int picks[N];
     int a;
@@ -25,9 +32,9 @@ int main() {
 
 
     int contain_count = 0;
-    int seq_length = max_val - min_val;
+
     //default to max possible length.
-    int lotto_sequence[seq_length];
+    int lotto_sequence[99999];
     int i;
 
     for(a= min_val; a<=max_val; a++){
@@ -42,8 +49,12 @@ int main() {
         }
     }
 
+    if ((winner_i-1 >= contain_count))
+        printf("DOES NOT EXIST\n");
+    else{
+        printf("%d",lotto_sequence[winner_i-1]);
+    }
 
-    printf("%d",lotto_sequence[winner_i-1]);
 
     return 0;
 }
