@@ -43,7 +43,10 @@ int main() {
          //   if(a < picks[i]) continue;
             if (contains_number(a,picks[i])){
                 //store val, keep track of size.
-                lotto_sequence[contain_count++] = a;
+                if (!already_in_there(a,lotto_sequence,contain_count+1)){
+
+                    lotto_sequence[contain_count++] = a;
+                }
                 //printf("%d\n",a);
             }
         }
@@ -75,6 +78,15 @@ int contains_number(int container, int b){
         container = container/(10);
     }
 
+    return 0;
+}
+int already_in_there(int number, int arr[], int length);
+int already_in_there(int number, int arr[], int length){
+    int i=0;
+    for(i=0; i < length; i++){
+        if (arr[i] == number)
+            return 1;
+    }
     return 0;
 }
 
