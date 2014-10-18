@@ -70,7 +70,7 @@ int contains_number(int container, int b){
     int x;
     //finds number of digits to compare.
 
-    x = pow(10,find_power(b));
+    x = find_power(b);
     while(container >= b){
         //if b is contained.
         if((container % x) == b) return 1;
@@ -112,5 +112,5 @@ int find_power(int number){
         }
         n++;
     }
-    return n;
+    return pow(10,n);
 }
