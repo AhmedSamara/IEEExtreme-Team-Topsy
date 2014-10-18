@@ -16,6 +16,7 @@ int main() {
     scanf("%d %d %d %d",&min_val,&max_val
                     ,&winner_i,&N);
     int seq_length = max_val - min_val;
+
     if(winner_i < 1 || winner_i > 1000000 || N > 18
        )
        {
@@ -41,15 +42,18 @@ int main() {
         //iterates through all numbers that may be added to lotto_sequence.
         for(i=0;i<N;i++){
          //   if(a < picks[i]) continue;
+         if (!already_in_there(a,lotto_sequence,contain_count)){
             if (contains_number(a,picks[i])){
                 //store val, keep track of size.
-                if (!already_in_there(a,lotto_sequence,contain_count+1)){
+
 
                     lotto_sequence[contain_count++] = a;
+                    if (contain_count >= winner_i-1) break;
                 }
                 //printf("%d\n",a);
             }
         }
+        if (contain_count >= winner_i) break;
     }
 
     if ((winner_i-1 >= contain_count))
@@ -83,7 +87,7 @@ int contains_number(int container, int b){
 int already_in_there(int number, int arr[], int length);
 int already_in_there(int number, int arr[], int length){
     int i=0;
-    for(i=0; i < length; i++){
+    for(i=length-1; i >=0; i--){
         if (arr[i] == number)
             return 1;
     }
@@ -91,8 +95,7 @@ int already_in_there(int number, int arr[], int length){
 }
 
 int find_power(int number){
-/*
-    if(number < 10)
+   if(number < 10)
         return 10;
     else if (number < 100){
         return 100;
@@ -104,8 +107,8 @@ int find_power(int number){
         return 100000;
     else if (number < 1000000)
         return 1000000;
-    else return 10000000; */
-        int n=0;
+    else return 10000000;
+    /*int n=0;
     int d;
     while(1){
         d = pow(10,n);
@@ -114,5 +117,5 @@ int find_power(int number){
         }
         n++;
     }
-    return d;
+    return d; */
 }
