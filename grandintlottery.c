@@ -106,11 +106,13 @@ int find_power(int number){
         return 1000000;
     else return 10000000; */
         int n=0;
+    int d;
     while(1){
-        if(number < pow(10,n)){
+        d = pow(10,n);
+        if(number < d){
             break;
         }
         n++;
     }
-    return pow(10,n);
+    return d;
 }
