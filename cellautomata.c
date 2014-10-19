@@ -12,51 +12,20 @@ int main() {
     int initial;
 
     scanf("%d %d %d %d", &rule, &max_iter, &N, &initial);
-
-    int binary_rep[N];
-    //initialize binary rep to zero.
-    //appropriate bits will be set to 1.
-   // scanf("%d",&initial);
-    int a = 1;
-    int i;
-    //convert value to binary array representation.
-    for(i=N-1; i >=0; i--){
-        binary_rep[i] = (initial & a) && 1;
-
-        a = a << 1;
+    int pick[N];
+    int x;
+    for(x=0;x<N;x++){
+        scanf("%d", &pick[x]);
     }
-    print_as_asterix(binary_rep,N);
-
-    //
-    int new_binary[N];
-
-    int j=0;
-    for (j=0; j < max_iter-1; j++){
-        int stable = 1;
-        //create the next line.
-        for(i=0; i < N; i++){
-            new_binary[i] = new_value(binary_rep,i);
-            //printf("%d",new_binary[i]);
-            //assume that it's stable until proven otherwise.
-            if(new_binary[i] != binary_rep[i])
-                stable = 0;
-
-        }
-        if(stable) break;
-        print_as_asterix(new_binary,N);
-        //once it's stable, done.
-
-        //Make the "new" line the previousline.
-        for(i=0; i < N; i++){
-            binary_rep[i] = new_binary[i];
-        }
-       // printf("\n");
+    for(x=0;x<N;x++){
+        printf("%d", pick[x]);
     }
 
 
 
-    return 0;
+  return 0;
 }
+
 void print_as_asterix(int arr[], int length){
     int x;
 

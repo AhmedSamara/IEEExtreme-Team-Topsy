@@ -38,11 +38,11 @@ int main () {
 	char pizzaToppings[pizzaCombos][10];
 	int pizzaSlices[pizzaCombos];
 
-	for(int i = 0; i < pizzaCombos; i++) {
+    int i;
+	for( i = 0; i < pizzaCombos; i++) {
 		scanf("%d", &pizzaSlices[i]);
 		scanf("%s", pizzaToppings[i]);
-	}
-	for(int i = 0; i < pizzaCombos; i++) {
+
 		pizzaString = strtok(pizzaToppings[i], " ,");
 		while(pizzaString != NULL) {
 			if(strcmp("Anchovies", pizzaString) == 0) {
@@ -103,7 +103,6 @@ int main () {
 
 		}
 		calories = calories + pizzaSlices[i] * PIZZA;
-
 	}
 
 	printf("The total calorie intake is %d", calories);
