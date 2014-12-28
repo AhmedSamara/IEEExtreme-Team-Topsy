@@ -5,11 +5,11 @@ Ahmed Samara
 Alexander Richardson
 Josh Kunesh
 
-Ranking:
-School: 3 
-Regional: 28
-Country (USA): 90
-Global: 603
+Ranking:  
+School: 3  
+Regional: 28  
+Country (USA): 90  
+Global: 603  
 
 This project was made for the 2014 IEEExtreme 24 hour programming challenge.
 
