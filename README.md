@@ -1,6 +1,6 @@
 IEEExtreme-Team-Topsy
 =====================
-Team:
+Team:  
 Ahmed Samara  
 Alexander Richardson  
 Josh Kunesh  
