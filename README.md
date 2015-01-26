@@ -1,9 +1,9 @@
 IEEExtreme-Team-Topsy
 =====================
 Team:
-Ahmed Samara
-Alexander Richardson
-Josh Kunesh
+Ahmed Samara  
+Alexander Richardson  
+Josh Kunesh  
 
 Ranking:  
 School: 3  
